@@ -15,6 +15,10 @@
         .other {
             width: 250px;
         }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -69,10 +73,7 @@
                     <option value="Корат">Корат</option>
                     <option value="Другое...">Другое...</option>
                 </select>
-            </div>
-            <div>
-                <label for="otherfamily">Другое...</label>
-                <input class="other" type="text" id="otherfamily" placeholder="Укажите породу, если ее нет в списке">
+                <div class="error" id="familyInfo"></div>
             </div>
             <div>
                 <label for="age">Возраст питомца:</label>
@@ -93,12 +94,14 @@
                 <label for="male">Самец</label><br>
                 <input type="radio" name="sex" id="female" value="female">
                 <label for="female">Самка</label>
+                <div class="error" id="sexInfo"></div>
             </div>
             <div>
                 <label for="comment">Комментарий владельца:</label> <br>
                 <textarea name="comment" id="comment" cols="30" rows="10" maxlength="150"
                     placeholder="Введите комментарий"></textarea>
             </div>
+            <div class="error" id="mainInfo"></div>
             <div>
                 <label for="photo">Приложите фото питомца:</label> <br>
                 <input type="file" id="photo">

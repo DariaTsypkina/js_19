@@ -35,8 +35,7 @@ function save() {
     let email = document.getElementById("email").value;
 
     let catfamily = document.getElementById("catfamily");
-    let otherfamily = document.getElementById("otherfamily");
-    let family = checkCatFamily(catfamily, otherfamily);
+    catfamily = checkCatFamily(catfamily);
 
     let age = document.getElementById("age").value;
 
@@ -44,10 +43,16 @@ function save() {
     let arrMeals = [];
     addMeal(meals, arrMeals);
 
-    let sex = document.querySelector("input[name=sex]").value;
+    let arrSex = document.querySelectorAll("input[name=sex]");
+    let sex;
+    sex = checkSex(arrSex, sex);
+
     let comment = document.getElementById("comment").value;
     let photo = document.querySelector("input[type=file]").value;
     photo = checkPhotoPath(photo);
+
+    let inputs = document.querySelectorAll("input");
+    checkAllInputs(inputs);
 
     let cat = new Cat(catname,
                         name,
@@ -55,7 +60,7 @@ function save() {
                         tel,
                         town,
                         email,
-                        family,
+                        catfamily,
                         age,
                         arrMeals,
                         sex,
@@ -64,6 +69,7 @@ function save() {
 
     console.log(cat);
 }
+
 
 function addMeal(meals, arrMeals) {
     for (let i = 0; i < meals.length; i++) {
@@ -77,17 +83,28 @@ function checkPhotoPath(str) {
     return str = str.replace(/ /g, "");
 }
 
-function checkCatFamily(catfamily, otherfamily) {
-    if (catfamily.value != "" && otherfamily.value != "") {
-        alert(`Выберите либо породу из списка, либо впишите в поле "Другое..."`);
-    }
-
-    if (catfamily.value == "" && otherfamily.value == "") {
-        alert(`Выберите породу из списка или впишите в поле "Другое..."`);
-        document.getElementById("otherfamily").style.borderColor = "red";   
-    } else if (otherfamily.value != "") {
-        document.getElementById("otherfamily").style.borderColor = "none";
-        catfamily.value == "";
-        return otherfamily.value;
+function checkCatFamily(catfamily) {
+    document.getElementById('familyInfo').innerHTML = "";
+    if (catfamily.value == "") {
+        document.getElementById('familyInfo').innerHTML = "Выберите породу";
     } else return catfamily.value;
+}
+
+function checkSex(arr, sex) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].checked) {
+            document.getElementById("sexInfo").innerHTML = "";
+            sex = arr[i].value;
+        } else document.getElementById("sexInfo").innerHTML = "Необходимо выбрать пол животного!";
+    }
+    return sex;
+}
+
+function checkAllInputs(inputs) {
+    document.getElementById('mainInfo').innerHTML = "";
+    for (let input of inputs) {
+        if (input.value == "") {
+            document.getElementById('mainInfo').innerHTML = "Необходимо заполнить все поля";
+        }
+    }
 }
