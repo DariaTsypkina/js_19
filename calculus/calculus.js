@@ -25,7 +25,7 @@ class Calc {
 function defineNum1() {
     let num1 = document.getElementById('number0').value;
     return num1;
-}
+}   
 
 function defineNum2() {
     let num2 = document.getElementById('number1').value;

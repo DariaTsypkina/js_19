@@ -38,6 +38,7 @@ function save() {
     catfamily = checkCatFamily(catfamily);
 
     let age = document.getElementById("age").value;
+    age = checkAge(age);
 
     let meals = document.getElementsByName("meal");
     let arrMeals = [];
@@ -50,9 +51,6 @@ function save() {
     let comment = document.getElementById("comment").value;
     let photo = document.querySelector("input[type=file]").value;
     photo = checkPhotoPath(photo);
-
-    let inputs = document.querySelectorAll("input");
-    checkAllInputs(inputs);
 
     let cat = new Cat(catname,
                         name,
@@ -90,20 +88,20 @@ function checkCatFamily(catfamily) {
 }
 
 function checkSex(arr, sex) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].checked) {
+    for (let i of arr) {
+        if (i.checked) {
             document.getElementById("sexInfo").innerHTML = "";
-            sex = arr[i].value;
+            sex = i.value;
         } else document.getElementById("sexInfo").innerHTML = "Необходимо выбрать пол животного!";
     }
     return sex;
 }
 
-function checkAllInputs(inputs) {
-    document.getElementById('mainInfo').innerHTML = "";
-    for (let input of inputs) {
-        if (input.value == "") {
-            document.getElementById('mainInfo').innerHTML = "Необходимо заполнить все поля";
-        }
+function checkAge(age) {
+    document.getElementById('ageInfo').innerHTML = "";
+    if (age == "") {
+        document.getElementById('ageInfo').innerHTML = "Укажите возраст";
+    } else {
+        return age;
     }
 }

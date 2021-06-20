@@ -78,6 +78,7 @@
             <div>
                 <label for="age">Возраст питомца:</label>
                 <input type="number" id="age" min="1" step="1" placeholder="Введите возврат в месяцах">
+                <div class="error" id="ageInfo"></div>
             </div>
             <div>
                 <div>Чем питается (выберите все подходящие варианты):</div>
@@ -107,7 +108,7 @@
                 <input type="file" id="photo">
             </div>
             <div>
-                <input type="submit" value="Сохранить" onclick="save();">
+                <button type="submit" onclick="save();">Сохранить</button>
             </div>
         </form>
     </main>
