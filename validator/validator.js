@@ -1,14 +1,5 @@
 // Standard version
 class Validator {
-    constructor(email,
-                domain,
-                date,
-                phone) {
-                    this.email = email;
-                    this.domain = domain;
-                    this.date = date;
-                    this.phone = phone;
-                }
     isEmail(str) {
         let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (str.match(mailFormat)) {
@@ -55,16 +46,6 @@ console.log(validator.isPhone('+7(910)123-45-67'));
 
 // Static version
 class ValidatorStatic {
-    constructor(email,
-                domain,
-                date,
-                phone) {
-                    this.email = email;
-                    this.domain = domain;
-                    this.date = date;
-                    this.phone = phone;
-                }
-
     static isEmail(str) {
         let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (str.match(mailFormat)) {
