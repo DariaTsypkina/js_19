@@ -70,7 +70,6 @@ function save() {
     console.log(cat);
 }
 
-
 function addMeal(meals, arrMeals) {
     for (let i = 0; i < meals.length; i++) {
         if (meals[i].checked) {
