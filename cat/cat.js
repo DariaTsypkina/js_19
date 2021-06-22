@@ -1,16 +1,5 @@
 class Cat {
-    constructor(catname,
-                name,
-                surname,
-                tel,
-                town,
-                email,
-                catfamily,
-                age,
-                meals,
-                sex,
-                comment,
-                photo) {
+    constructor(catname, name, surname, tel, town, email, catfamily, age, meals, sex, comment, photo) {
                     this.catname = catname;
                     this.name = name;
                     this.surname = surname;
@@ -52,18 +41,7 @@ function save() {
     let photo = document.querySelector("input[type=file]").value;
     photo = checkPhotoPath(photo);
 
-    let cat = new Cat(catname,
-                        name,
-                        surname,
-                        tel,
-                        town,
-                        email,
-                        catfamily,
-                        age,
-                        arrMeals,
-                        sex,
-                        comment,
-                        photo);
+    let cat = new Cat(catname, name, surname, tel, town, email, catfamily, age, arrMeals, sex, comment, photo);
 
     console.log(cat);
 }
