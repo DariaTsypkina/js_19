@@ -1,9 +1,4 @@
 class Calc {
-    constructor(num1, num2) {
-        this.num1 = num1;
-        this.num2 = num2;
-    }
-
     static sum(a, b) {
         return +a + +b;
     }
@@ -20,7 +15,6 @@ class Calc {
         return a / b;
     }
 }
-
 
 function defineNum1() {
     let num1 = document.getElementById('number0').value;

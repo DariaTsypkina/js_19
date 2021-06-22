@@ -2,38 +2,22 @@
 class Validator {
     isEmail(str) {
         let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (mailFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return mailFormat.test(str);
     }
 
     isDomain(str) {
         let domainFormat = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
-        if (domainFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return domainFormat.test(str);
     }
 
     isDate(str) {
         let dateFormat = /(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d/;
-        if (dateFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return dateFormat.test(str);
     }
 
     isPhone(str) {
         let phoneFormat = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
-        if (phoneFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return phoneFormat.test(str);
     }
 }
 
@@ -48,38 +32,22 @@ console.log(validator.isPhone('+7(910)123-45-67'));
 class ValidatorStatic {
     static isEmail(str) {
         let mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (mailFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return mailFormat.test(str);
     }
     
     static isDomain(str) {
         let domainFormat = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
-        if (domainFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return domainFormat.test(str);
     }
     
     static isDate(str) {
         let dateFormat = /(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d/;
-        if (dateFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return dateFormat.test(str);
     }
     
     static isPhone(str) {
         let phoneFormat = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
-        if (phoneFormat.test(str)) {
-            return true;
-        } else {
-            return false;
-        }
+        return phoneFormat.test(str);
     }
 }
 

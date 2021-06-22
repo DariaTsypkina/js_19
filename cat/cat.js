@@ -92,9 +92,9 @@ function checkSex(arr, sex) {
         if (i.checked) {
             document.getElementById("sexInfo").innerHTML = "";
             sex = i.value;
+            return sex;
         } else document.getElementById("sexInfo").innerHTML = "Необходимо выбрать пол животного!";
     }
-    return sex;
 }
 
 function checkAge(age) {
